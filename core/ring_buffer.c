@@ -8,7 +8,10 @@ typedef struct{
     volatile uint8_t head;
     volatile uint8_t tail;
 } RingBuffer;
-
+void rb_init(RingBuffer *rb){
+    rb->head=0;
+    rb->tail=0;
+}
 bool rb_empty(RingBuffer *rb){
     return rb->head==rb->tail;
 }
