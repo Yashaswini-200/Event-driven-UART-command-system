@@ -2,7 +2,6 @@
 #include<stdbool.h>
 #include "ring_buffer.h"
 #include <avr/io.h>
-static RingBuffer tx_buffer;
 static RingBuffer rx_buffer;
 void uart_init(){
     rb_init(&rx_buffer);
