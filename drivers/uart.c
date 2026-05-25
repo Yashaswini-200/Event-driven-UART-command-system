@@ -3,6 +3,10 @@
 #include "ring_buffer.h"
 #include <avr/io.h>
 static RingBuffer rx_buffer;
+void uart_rx_handler(uint8_t data){
+    rb_push(&rx_buffer, data);
+
+}
 void uart_init(){
     rb_init(&rx_buffer);
 }
