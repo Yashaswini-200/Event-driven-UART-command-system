@@ -9,6 +9,9 @@ void uart_rx_handler(uint8_t data){
 }
 void uart_init(){
     rb_init(&rx_buffer);
+    UBRR0 = 103;
+    UCSR0B |= (1 << RXEN0) | (1 << TXEN0) | (1<< RXCIE0) ;
+    UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
 }
 bool uart_available(){
     return !rb_empty(&rx_buffer);
